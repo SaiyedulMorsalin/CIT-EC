@@ -8,7 +8,7 @@ class Product(models.Model):
     stock_quantity = models.IntegerField(default=0)
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)  # Updates on each save
+    updated_at = models.DateTimeField(auto_now=True)  
 
     def __str__(self):
         return self.name

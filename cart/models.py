@@ -8,4 +8,4 @@ class Cart(models.Model):
     quantity = models.IntegerField()
 
     def __str__(self):
-        return f"{self.quantity} x {self.product.name} in {self.user.username}'s Cart"
+        return f"{self.quantity} x {self.product.name} in {self.customer.user.username}'s Cart"
