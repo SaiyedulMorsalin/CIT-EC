@@ -1,27 +1,33 @@
+
+
 {% extends 'base.html' %}
+{% load static %}
 {% block main_content %}
-  <div class="hero bg-base-200 min-h-screen">
-    <div class="hero-content flex-col lg:flex-row-reverse">
-      <div class="text-center lg:text-left">
-        <h1 class="text-5xl font-bold">Login now!</h1>
-        <p class="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+  <div class="container mx-auto">
+    <section>
+      <div class="flex grid grid-cols-12 gap-4">
+        <div class="col-span-4 h-10 bg-green-500"></div>
+        <div class="col-span-8 h-10 bg-green-500"></div>
       </div>
-      <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-        <form class="card-body" method="POST">
-          {% csrf_token %}
-          <div class="form-control">
-            <label class="label"><span class="label-text">Username</span></label>
-            <input type="text" name="username" placeholder="example@username" class="input input-bordered" required />
-          </div>
-          <div class="form-control">
-            <label class="label"><span class="label-text">Password</span></label>
-            <input type="password" name="password" placeholder="password" class="input input-bordered" required />
-          </div>
-          <div class="form-control mt-6">
-            <button class="btn btn-primary">Login</button>
-          </div>
-        </form>
-      </div>
+    </section>
+    <section class="my-5">
+      <div class="h-10 bg-green-500"></div>
+      <div class="card-container grid grid-cols-12 gap-4 py-4">
+        <div class="product-card col-span-2 border rounded-lg shadow-md">
+            <div class="pd-card-body h-72 w-52 overflow-hidden" onmouseover="onCursorImg(event)" onmouseout="outCursorImg()">
+              <div class="img w-full overflow-hidden" id="img" >
+                <img class="h-full w-full object-cover" src="https://d2v5dzhdg4zhx3.cloudfront.net/web-assets/images/storypages/primary/ProductShowcasesampleimages/JPEG/Product+Showcase-1.jpg" alt="Product Image">
+                </div>
+                <div class="pd-cart-text p-2">
+                    <h3 class="card-title text-lg font-semibold">Product 1</h3>
+                    <h4 class="text-base font-medium">$150 <span class="line-through text-gray-500">$300</span></h4>
+                    <h4 class="text-sm">***** <span class="text-gray-500">(15 reviews)</span></h4>
+                </div>
+            </div>
+        </div>
     </div>
+    
+    </section>
   </div>
+  <script src="{% static 'scripts/index.js' %}"></script>
 {% endblock %}
