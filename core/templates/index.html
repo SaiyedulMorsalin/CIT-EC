@@ -1,33 +1,59 @@
-
-
 {% extends 'base.html' %}
 {% load static %}
 {% block main_content %}
-  <div class="container mx-auto">
-    <section>
-      <div class="flex grid grid-cols-12 gap-4">
-        <div class="col-span-4 h-10 bg-green-500"></div>
-        <div class="col-span-8 h-10 bg-green-500"></div>
+
+<div class="container mx-auto">
+  <!-- Browse by Category Section -->
+  <section class="my-5">
+    <div class="px-5">
+      <div class="flex justify-between items-center mb-5">
+        <h4 class="font-semibold text-xl">Browse By Category</h4>
+        <p class="text-blue-500 cursor-pointer">See all</p>
       </div>
-    </section>
-    <section class="my-5">
-      <div class="h-10 bg-green-500"></div>
-      <div class="card-container grid grid-cols-12 gap-4 py-4">
-        <div class="product-card col-span-2 border rounded-lg shadow-md">
-            <div class="pd-card-body h-72 w-52 overflow-hidden" onmouseover="onCursorImg(event)" onmouseout="outCursorImg()">
-              <div class="img w-full overflow-hidden" id="img" >
-                <img class="h-full w-full object-cover" src="https://d2v5dzhdg4zhx3.cloudfront.net/web-assets/images/storypages/primary/ProductShowcasesampleimages/JPEG/Product+Showcase-1.jpg" alt="Product Image">
-                </div>
-                <div class="pd-cart-text p-2">
-                    <h3 class="card-title text-lg font-semibold">Product 1</h3>
-                    <h4 class="text-base font-medium">$150 <span class="line-through text-gray-500">$300</span></h4>
-                    <h4 class="text-sm">***** <span class="text-gray-500">(15 reviews)</span></h4>
-                </div>
+      <div class="grid grid-cols-12 gap-4" id="category-container">
+        <!-- Category Item 1 -->
+        <div class="col-span-2 rounded p-2">
+          <div class="border w-36 h-36 flex justify-center items-center hover:shadow-md">
+            <div>
+              <a href="">
+                <img class="w-24 h-24" src="{% static 'media/images/categories/cellphone.png' %}" alt="Cellphone">
+              <p class="text-center mt-2">Cell Phone</p>
+              </a>
             </div>
+          </div>
         </div>
+        <!-- Category Item 2 -->
+        
+      </div>
     </div>
-    
-    </section>
-  </div>
-  <script src="{% static 'scripts/index.js' %}"></script>
+  </section>
+
+  <!-- Product Card Section -->
+  <section class="my-5">
+    <div class="flex justify-between items-center ">
+      <h4 class="font-semibold text-xl">Browse By Category</h4>
+      <p class="text-blue-500 cursor-pointer">See all</p>
+    </div>
+    <div class="card-container grid grid-cols-12 gap-4 py-4">
+      <div class="product-card col-span-2 border rounded-lg shadow-md p-2">
+        <div class="pd-card-body h-80 w-full bg-green-500">
+          <!-- Image and Button -->
+          <div class="img relative" id="img" onmouseover="onCursorImg()" onmouseout="outCursorImg()">
+            <img class="w-full object-cover" src="https://d2v5dzhdg4zhx3.cloudfront.net/web-assets/images/storypages/primary/ProductShowcasesampleimages/JPEG/Product+Showcase-1.jpg" alt="Product Image">
+            <a href="#" id="add-to-cart" class="bg-black text-white w-full absolute bottom-0 left-0 text-center py-2 hover:bg-gray-800">Add to Cart</a>
+          </div>
+          <!-- Product Info -->
+          <div class="pd-cart-text p-2">
+            <a href="">
+              <h3 class="card-title text-lg font-semibold">Product 1</h3>
+              <h4 class="text-base font-medium">$150 <span class="line-through text-gray-500">$300</span></h4>
+            </a>
+            <h4 id="pd-cart-review" class="text-sm">***** <span class="text-gray-500">(15 reviews)</span></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
 {% endblock %}

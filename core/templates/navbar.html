@@ -22,7 +22,7 @@
               <a>Settings</a>
             </li>
             <li>
-              <a href="">Logout</a>
+              <a href="{% url 'customer_logout' %}">Logout</a>
             </li>
           </ul>
         </div>
@@ -31,10 +31,10 @@
       <div class="flex-none">
         <ul class="flex gap-10 items-center">
           <li>
-            <a href="">Login</a>
+            <a href="{% url 'customer_login' %}">Login</a>
           </li>
           <li>
-            <a href="">Register</a>
+            <a href="{% url 'customer_register' %}">Register</a>
           </li>
         </ul>
       </div>
