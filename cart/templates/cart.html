@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block main_content %}
+  <h1>This is your cart.....</h1>
+
+  <div class="container mx-auto">
+    <div class="overflow-x-auto">
+      {% if carts %}
+        <table class="table border">
+          <thead>
+            <tr class="">
+              <th>Product</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Sub Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- row 1 -->
+
+            {% for cart in carts %}
+              <tr class="border py-2">
+                <td>{{ cart.product.name }}</td>
+                <td>{{ cart.product.price }}</td>
+
+                <td class="flex items-center">
+                  <a class="pl-5" href="{% url 'product_remove' cart.product.id %}"><i class="fa-solid fa-minus fa-lg"></i></a><p class="mx-3">{{ cart.quantity }}</p><a class="pr-5" href="{% url 'product_add' cart.product.id %}"><i class="fa-solid fa-plus fa-lg"></i></a>
+                </td>
+
+                <td>{{ cart.total_price }}</td>
+              </tr>
+            {% endfor %}
+            <!-- row 2 -->
+          </tbody>
+        </table>
+      {% else %}
+        <p>You have no cart available......</p>
+      {% endif %}
+    </div>
+
+    <div class="flex justify-end py-4">
+      <div class="border w-96 p-2">
+        <h3>Cart Total</h3><div class="">
+          <h4>Sub Total : {{ total_price }}</h4>
+          <h4>Shipping : $Free</h4>
+          <h4>Total : {{ total_price }}</h4>
+          <div class="flex justify-center">
+            <button class="bg-red-500"><a href="">Proccess To Checkout</a></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

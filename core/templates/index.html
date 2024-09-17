@@ -17,13 +17,13 @@
             <div>
               <a href="">
                 <img class="w-24 h-24" src="{% static 'media/images/categories/cellphone.png' %}" alt="Cellphone">
-              <p class="text-center mt-2">Cell Phone</p>
+                <p class="text-center mt-2">Cell Phone</p>
               </a>
             </div>
           </div>
         </div>
         <!-- Category Item 2 -->
-        
+
       </div>
     </div>
   </section>
@@ -39,8 +39,12 @@
         <div class="pd-card-body h-80 w-full bg-green-500">
           <!-- Image and Button -->
           <div class="img relative" id="img" onmouseover="onCursorImg()" onmouseout="outCursorImg()">
-            <img class="w-full object-cover" src="https://d2v5dzhdg4zhx3.cloudfront.net/web-assets/images/storypages/primary/ProductShowcasesampleimages/JPEG/Product+Showcase-1.jpg" alt="Product Image">
-            <a href="#" id="add-to-cart" class="bg-black text-white w-full absolute bottom-0 left-0 text-center py-2 hover:bg-gray-800">Add to Cart</a>
+            <img class="w-full object-cover"
+              src="https://d2v5dzhdg4zhx3.cloudfront.net/web-assets/images/storypages/primary/ProductShowcasesampleimages/JPEG/Product+Showcase-1.jpg"
+              alt="Product Image">
+            <a href="{%url 'customer_cart'%}" id="add-to-cart"
+              class="bg-black text-white w-full absolute bottom-0 left-0 text-center py-2 hover:bg-gray-800">Add to
+              Cart</a>
           </div>
           <!-- Product Info -->
           <div class="pd-cart-text p-2">
